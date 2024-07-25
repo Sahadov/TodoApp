@@ -22,20 +22,10 @@ class ToDoViewController: UITableViewController {
 //        if let itemsArray = defaults.array(forKey: "TodoListArray") as? [String] {
 //            items = itemsArray
 //        }
-        let newItem1 = Item()
-        newItem1.title = "Task 1"
-        itemArray.append(newItem1)
         
-        let newItem2 = Item()
-        newItem2.title = "Task 2"
-        itemArray.append(newItem2)
+        loadItems()
         
-        let newItem3 = Item()
-        newItem3.title = "Task 3"
-        itemArray.append(newItem3)
-        
-        
-        
+    
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ToDoItemCell")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
 
@@ -97,9 +87,19 @@ class ToDoViewController: UITableViewController {
             let data = try encoder.encode(itemArray)
             try data.write(to: dataFilePath!)
         } catch {
-            print("Error enclding!")
+            print("Error encoding!")
         }
         self.tableView.reloadData()
+    }
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("Error decoding!")
+            }
+        }
     }
     
 }
