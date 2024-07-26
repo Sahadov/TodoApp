@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1857F532C53356C00B00FDA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1857F512C53356C00B00FDA /* DataModel.xcdatamodeld */; };
 		D1F77A832C51E95E00BE14A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F77A822C51E95E00BE14A4 /* AppDelegate.swift */; };
 		D1F77A852C51E95E00BE14A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F77A842C51E95E00BE14A4 /* SceneDelegate.swift */; };
 		D1F77A872C51E95E00BE14A4 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F77A862C51E95E00BE14A4 /* ToDoViewController.swift */; };
 		D1F77A8D2C51E95E00BE14A4 /* TDCode.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1F77A8B2C51E95E00BE14A4 /* TDCode.xcdatamodeld */; };
 		D1F77A8F2C51E96000BE14A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F77A8E2C51E96000BE14A4 /* Assets.xcassets */; };
 		D1F77A922C51E96000BE14A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F77A902C51E96000BE14A4 /* LaunchScreen.storyboard */; };
-		D1F77A9A2C51FEEC00BE14A4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F77A992C51FEEB00BE14A4 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D1857F522C53356C00B00FDA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		D1F77A7F2C51E95E00BE14A4 /* TDCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F77A822C51E95E00BE14A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1F77A842C51E95E00BE14A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		D1F77A8E2C51E96000BE14A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1F77A912C51E96000BE14A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1F77A932C51E96000BE14A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1F77A992C51FEEB00BE14A4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 		D1F77A9B2C51FF0D00BE14A4 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				D1F77A992C51FEEB00BE14A4 /* Item.swift */,
+				D1857F512C53356C00B00FDA /* DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F77A9A2C51FEEC00BE14A4 /* Item.swift in Sources */,
 				D1F77A872C51E95E00BE14A4 /* ToDoViewController.swift in Sources */,
+				D1857F532C53356C00B00FDA /* DataModel.xcdatamodeld in Sources */,
 				D1F77A832C51E95E00BE14A4 /* AppDelegate.swift in Sources */,
 				D1F77A8D2C51E95E00BE14A4 /* TDCode.xcdatamodeld in Sources */,
 				D1F77A852C51E95E00BE14A4 /* SceneDelegate.swift in Sources */,
@@ -376,6 +376,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		D1857F512C53356C00B00FDA /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D1857F522C53356C00B00FDA /* DataModel.xcdatamodel */,
+			);
+			currentVersion = D1857F522C53356C00B00FDA /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		D1F77A8B2C51E95E00BE14A4 /* TDCode.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

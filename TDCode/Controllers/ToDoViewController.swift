@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ToDoViewController: UITableViewController {
 
     var itemArray = [Item]()
     let defaults = UserDefaults.standard
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plst")
 
@@ -60,9 +63,17 @@ class ToDoViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            //what will happen once the user clicks the Add Item button on our UIAlert
-            let newItem = Item()
+            //NSencoder
+            //let newItem = Item()
+            //newItem.title = textField.text!
+            
+            // CoreData
+            
+            let newItem = Item(context: self.context)
             newItem.title = textField.text!
+            newItem.done = false
+            
+            // common
             self.itemArray.append(newItem)
             self.saveItems()
             //self.defaults.set(self.itemArray, forKey: "TodoListArray")
@@ -82,6 +93,7 @@ class ToDoViewController: UITableViewController {
     }
     
     func saveItems() {
+        /* for NSencoder
         let encoder = PropertyListEncoder()
         do {
             let data = try encoder.encode(itemArray)
@@ -89,9 +101,18 @@ class ToDoViewController: UITableViewController {
         } catch {
             print("Error encoding!")
         }
+        */
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context!")
+        }
+        
         self.tableView.reloadData()
     }
     func loadItems(){
+        /* for NSencoder
         if let data = try? Data(contentsOf: dataFilePath!) {
             let decoder = PropertyListDecoder()
             do {
@@ -100,6 +121,7 @@ class ToDoViewController: UITableViewController {
                 print("Error decoding!")
             }
         }
+        */
     }
     
 }
